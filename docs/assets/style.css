@@ -118,7 +118,7 @@ ul.social-media-list img {
 }
 
 .next-prev-post .post-post-container {
-  width: 100px;
+  width: 50%;
 }
 
 .next-prev-post .post-post-container:first-child h1, .next-prev-post .post-post-container:first-child p {
@@ -135,17 +135,7 @@ ul.social-media-list img {
   transition: all 0.1s ease-in
 }
 
-.next-prev-post h1 {
-  font-size: 1rem;
-  font-family: 'Roboto',sans-serif;
-  text-transform: uppercase;
-  color: black;
-  padding-bottom: 4px;
-  border-bottom: 3px solid black;
-}
-
 .next-prev-post p {
-  text-align: justify;
   margin-top: 0;
   padding-top: 0;
   font-size: 1.15rem;

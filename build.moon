@@ -135,12 +135,11 @@ for i = #files, 1, -1
   footer = ""
   if i == #files
     prev_title = files[i-1].title
-    footer ..= "
+    footer ..= "<br><br><br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
-            <h1>prev post</h1>
-            <p>#{prev_title}</p>
+            <p>< #{prev_title}</p>
           </a>
         </div>
         <div class='post-post-container'>
@@ -150,17 +149,16 @@ for i = #files, 1, -1
       <div class='back-to-home'>
         <a href='/' >back to main</a>
       </div>
-      <br><br><br>"
+      <br><br>"
   elseif i == 1
     next_title = files[i+1].title
-    footer ..= "
+    footer ..= "<br><br><br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
         </div>
         <div class='post-post-container'>
           <a href='#{next_title}'>
-            <h1>next post</h1>
-            <p>#{next_title}</p>
+            <p>#{next_title} ></p>
           </a>
         </div>
       </div>
@@ -168,22 +166,20 @@ for i = #files, 1, -1
       <div class='back-to-home'>
         <a href='/' >back to main</a>
       </div>
-      <br><br><br>"
+      <br><br>"
   else
     prev_title = files[i-1].title
     next_title = files[i+1].title
-    footer ..= "
+    footer ..= "<br><br><br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
-            <h1>prev post</h1>
-            <p>#{prev_title}</p>
+            <p>< #{prev_title}</p>
           </a>
         </div>
         <div class='post-post-container'>
           <a href='#{next_title}'>
-            <h1>next post</h1>
-            <p>#{next_title}</p>
+            <p>#{next_title} ></p>
           </a>
         </div>
       </div>
@@ -191,5 +187,5 @@ for i = #files, 1, -1
       <div class='back-to-home'>
         <a href='/' >back to main</a>
       </div>
-      <br><br><br>"
+      <br><br>"
   build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
