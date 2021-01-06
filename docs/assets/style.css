@@ -143,6 +143,10 @@ ul.social-media-list img {
   line-height: 0;
 }
 
+.next-prev-post p:hover {
+  color: gray;
+}
+
 .next-prev-post a {
   display: block;
   color: black;
