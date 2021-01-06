@@ -17,6 +17,10 @@ h1, h2 {
   margin: 1em 0 1em 0;
 }
 
+h1 {
+  text-align: center;
+}
+
 h2.links {
   margin: 1.5em 0 0.25em 0;
 }
@@ -43,10 +47,6 @@ img.center {
 
 iframe {
   padding: 1em 0 1em 0;
-}
-
-p {
-  text-align: justify;
 }
 
 a:link, a:visited {
@@ -111,6 +111,76 @@ ul.social-media-list img {
 .devlog-title a {
   text-decoration: none;
 }
+
+.next-prev-post {
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-prev-post .post-post-container {
+  width: 100px;
+}
+
+.next-prev-post .post-post-container:first-child h1, .next-prev-post .post-post-container:first-child p {
+  text-align: left;
+}
+
+.next-prev-post .post-post-container:last-child h1, .next-prev-post .post-post-container:last-child p {
+  text-align: right;
+}
+
+.next-prev-post .post-post-container a {
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in
+}
+
+.next-prev-post h1 {
+  font-size: 1rem;
+  font-family: 'Roboto',sans-serif;
+  text-transform: uppercase;
+  color: black;
+  padding-bottom: 4px;
+  border-bottom: 3px solid black;
+}
+
+.next-prev-post p {
+  text-align: justify;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 0;
+}
+
+.next-prev-post a {
+  display: block;
+  color: black;
+  font-weight: 600;
+  border-bottom: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.next-prev-post a:hover {
+  background: none;
+  text-decoration: none;
+}
+
+div.back-to-home {
+  margin: 0 auto;
+  width: 100%;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+div.back-to-home a {
+  text-decoration: none;
+}
+
 
 @media screen and (max-width: 880px) {
   body {

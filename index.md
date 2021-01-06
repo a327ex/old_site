@@ -79,26 +79,6 @@ This is fairly challenging and it helps keep me focused.
 <br>
 <br>
 
-<div align="center">
-<h2 class="links">devlog</h2>
-</div>
+## Devlog
 
 {{devlog}}
-
-<br>
-<br>
-<br>
-
-<div align="center">
-<ul class="social-media-list">
-    <li><a href="https://store.steampowered.com/dev/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/steam.svg" alt="Steam" title="Steam"></a></li>
-    <li><a href="https://a327ex.itch.io" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/itch-dot-io.svg" alt="itch" title="itch"></a></li>
-    <li><a href="https://twitter.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/twitter.svg" alt="Twitter" title="Twitter"></a></li>
-    <li><a href="https://github.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" alt="GitHub" title="GitHub"></a></li>
-    <li><a href="https://www.youtube.com/channel/UCFOaLI21ThFPQxJJ5lFF4SQ" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/youtube.svg" alt="YouTube" title="YouTube"></a></li>
-    <li><a href="https://reddit.com/r/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/reddit.svg" alt="reddit" title="reddit"></a></li>
-    <li><a href="https://hydancer.tumblr.com" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/tumblr.svg" alt="tumblr" title="tumblr"></a></li>
-</ul>
-</div>
-
-<br>

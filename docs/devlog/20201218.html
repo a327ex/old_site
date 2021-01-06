@@ -1,0 +1,69 @@
+
+      <meta charset='uft-8'>
+      <title>20201218</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
+      <link rel='stylesheet' href='../assets/style.css'>
+      <link rel='stylesheet' href='../assets/gruvbox-dark.css'>
+      <link rel='icon' href='../assets/shun.png'>
+      <style>
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
+          ul {
+    list-style: none;
+    padding: 0.25em 0 0.25em 1em;
+  }
+
+  ul li {
+    line-height: 1.7;
+  }
+
+  ul li:after {
+    text-decoration: line-through;
+  }
+
+  ul li:before {
+    content: '✓';
+    padding-right: 0.2em;
+  }
+
+  h1 {
+    padding-top: 2em;
+  }
+
+      </style><!--
+title: 20201218
+-->
+
+<h1 id="20201218">20201218</h1>
+<ul>
+<li><del>Finish OvermapNode text placement</del></li>
+</ul>
+<p>Yup, all that I needed was definitely to sleep. Solved this in 10 minutes after waking up. Crazy how that always happens.</p>
+<ul>
+<li><del>OvermapNode juice</del></li>
+<li><del>Overmap node selection logic</del></li>
+</ul>
+<p>Ended up mostly fixing details with text placement and then juicing up node objects as well as making them work logically such that each time you choose a node the nodes next to it unlock, that you can't click nodes that aren't unlocked, etc. Still pretty dubious on the overall colors of nodes/edges as well as how the juice is going.</p>
+<p>Slay the Spire seems to have a simpler approach where each node simply increases in size when hovered over and then decreases back to normal when not, and nodes that can be visited simply pulse with an outline when hovered on. My current solution is pulsing for nodes that can be visited, and just a spring pull whenever hovering or clicking, but this feels odd and wrong, which is odd itself, given that springs generally work well for this stuff. I think it feels odd because each node is an unfilled circle and somehow that makes the effect of the spring less aesthetically pleasing.</p>
+<p><div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.3%;"><iframe src="https://www.youtube.com/embed/gSU7EVdhfBE?rel=0&playlist=gSU7EVdhfBE&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div></p>
+<script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='20201217'>
+            <h1>prev post</h1>
+            <p>20201217</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+          <a href='20201219'>
+            <h1>next post</h1>
+            <p>20201219</p>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br><br>

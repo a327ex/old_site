@@ -1,20 +1,32 @@
-etlua = require 'etlua'
-
-get_head = ->
-  return [[
-    <meta charset="uft-8">
-    <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/gruvbox-dark.css">
-    <link rel="stylesheet" href="assets/zoom.css">
-    <link rel="icon" href="assets/shun.png">
-    <style>
-      #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
-      #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
-    </style>
-  ]]
+get_head = (title, style) ->
+  if title == "adn's web page"
+    return "
+      <meta charset='uft-8'>
+      <title>#{title}</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
+      <link rel='stylesheet' href='assets/style.css'>
+      <link rel='stylesheet' href='assets/gruvbox-dark.css'>
+      <link rel='icon' href='assets/shun.png'>
+      <style>
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
+        #{style or ''}
+      </style>"
+  else
+    return "
+      <meta charset='uft-8'>
+      <title>#{title}</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
+      <link rel='stylesheet' href='../assets/style.css'>
+      <link rel='stylesheet' href='../assets/gruvbox-dark.css'>
+      <link rel='icon' href='../assets/shun.png'>
+      <style>
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
+        #{style or ''}
+      </style>"
 
 get_email = ->
   return [[
@@ -38,39 +50,146 @@ get_email = ->
   ]]
 
 get_devlog = ->
-  content = [[<table width="100%%"><tr><td width="50%%" valign="top" align="center">]]
+  content = [[<table width="32%%"><tr><td width="16.6%%" valign="top" align="center">]]
   files = {}
   for log in io.popen("dir devlog /b")\lines!
     file_title = log\sub(1, log\find'%.'-1)
     table.insert files, file_title
   for i = #files, 1, -1
-    content ..= [[<td width="50%%" valign="top" align="center">]] if i == math.floor(#files/2)
+    content ..= [[<td width="16.6%%" valign="top" align="center">]] if i == math.floor(#files/2)
     content ..= "<span class='devlog-title'><a href='devlog/#{files[i]}'>#{files[i]}</a></span><br>"
   content ..= [[</table>]]
   return content
 
 convert_markdown = (file) ->
   body = io.popen("binaries\\pandoc -f gfm #{file}", "r")\read"*a"
-  body = body\gsub '<img src="([^"]*)">', '<img src="%1" data-action="zoom">'
+  body = body\gsub '<a href="([^"]*)">', '<a href="%1" target="_blank">'
   body = body\gsub '{{email}}', get_email!
   body = body\gsub '{{devlog}}', get_devlog!
+  body = body\gsub '{{streamable ([%w]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://streamable.com/o/%1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>]]
+  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div>]]
   _, _, title = body\find 'title: ([^\n]*)'
   _, _, date = body\find 'date: ([^\n]*)'
   _, _, tags = body\find 'tags: ([^\n]*)'
   content = ''
   content ..= body
   if file == "index.md" then content ..= [[<script src="assets/zoom.min.js"></script><script src="assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>]]
-  else content ..= [[<script src="../assets/zoom.min.js"></script><script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>]]
+  else content ..= [[<script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>]]
   return content, title, date, tags
 
-build_page = (filename, title, body) ->
+build_page = (filename, title, style, body, footer) ->
   content = ''
-  content ..= etlua.render get_head!, {:title}
+  content ..= get_head title, style
   content ..= body
+  content ..= footer
   file = io.open filename, "w"
   file\write content
   file\close!
 
 -- Build main page
-content, title = convert_markdown "index.md"
-build_page "docs/index.html", title, content
+body, title = convert_markdown "index.md"
+build_page "docs/index.html", title, nil, body, [[
+  <br><br><br>
+  <div align="center">
+  <ul class="social-media-list">
+    <li><a href="https://store.steampowered.com/dev/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/steam.svg" alt="Steam" title="Steam"></a></li>
+    <li><a href="https://a327ex.itch.io" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/itch-dot-io.svg" alt="itch" title="itch"></a></li>
+    <li><a href="https://twitter.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/twitter.svg" alt="Twitter" title="Twitter"></a></li>
+    <li><a href="https://github.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" alt="GitHub" title="GitHub"></a></li>
+    <li><a href="https://www.youtube.com/channel/UCFOaLI21ThFPQxJJ5lFF4SQ" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/youtube.svg" alt="YouTube" title="YouTube"></a></li>
+    <li><a href="https://reddit.com/r/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/reddit.svg" alt="reddit" title="reddit"></a></li>
+    <li><a href="https://hydancer.tumblr.com" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/tumblr.svg" alt="tumblr" title="tumblr"></a></li>
+  </ul></div><br>
+]]
+
+-- Build devlog pages
+style = [[
+  ul {
+    list-style: none;
+    padding: 0.25em 0 0.25em 1em;
+  }
+
+  ul li {
+    line-height: 1.7;
+  }
+
+  ul li:after {
+    text-decoration: line-through;
+  }
+
+  ul li:before {
+    content: '✓';
+    padding-right: 0.2em;
+  }
+
+  h1 {
+    padding-top: 2em;
+  }
+]]
+files = {}
+for log in io.popen("dir devlog /b")\lines!
+  body, title = convert_markdown "devlog/#{log}"
+  table.insert files, {:log, :body, :title}
+for i = #files, 1, -1
+  log = files[i]
+  footer = ""
+  if i == #files
+    prev_title = files[i-1].title
+    footer ..= "
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='#{prev_title}'>
+            <h1>prev post</h1>
+            <p>#{prev_title}</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br><br>"
+  elseif i == 1
+    next_title = files[i+1].title
+    footer ..= "
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+        </div>
+        <div class='post-post-container'>
+          <a href='#{next_title}'>
+            <h1>next post</h1>
+            <p>#{next_title}</p>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br><br>"
+  else
+    prev_title = files[i-1].title
+    next_title = files[i+1].title
+    footer ..= "
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='#{prev_title}'>
+            <h1>prev post</h1>
+            <p>#{prev_title}</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+          <a href='#{next_title}'>
+            <h1>next post</h1>
+            <p>#{next_title}</p>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br><br>"
+  build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
