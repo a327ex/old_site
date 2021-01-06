@@ -4,6 +4,15 @@ get_head = (title, style) ->
       <meta charset='uft-8'>
       <title>#{title}</title>
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-09V5DY115J');
+      </script>
       <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
       <link rel='stylesheet' href='assets/style.css'>
       <link rel='stylesheet' href='assets/gruvbox-dark.css'>
@@ -18,6 +27,15 @@ get_head = (title, style) ->
       <meta charset='uft-8'>
       <title>#{title}</title>
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-09V5DY115J');
+      </script>
       <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
       <link rel='stylesheet' href='../assets/style.css'>
       <link rel='stylesheet' href='../assets/gruvbox-dark.css'>
