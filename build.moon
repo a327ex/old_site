@@ -79,13 +79,24 @@ get_devlog = ->
   content ..= [[</table>]]
   return content
 
+get_comments = ->
+  return [[
+    <script src="https://utteranc.es/client.js"
+      repo="a327ex/a327ex.github.io"
+      issue-term="pathname"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  ]]
+
 convert_markdown = (file) ->
   body = io.popen("binaries\\pandoc -f gfm #{file}", "r")\read"*a"
   body = body\gsub '<a href="([^"]*)">', '<a href="%1" target="_blank">'
   body = body\gsub '{{email}}', get_email!
   body = body\gsub '{{devlog}}', get_devlog!
   body = body\gsub '{{streamable ([%w]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://streamable.com/o/%1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>]]
-  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div>]]
+  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><p><br></p>]]
   _, _, title = body\find 'title: ([^\n]*)'
   _, _, date = body\find 'date: ([^\n]*)'
   _, _, tags = body\find 'tags: ([^\n]*)'
@@ -167,7 +178,7 @@ for i = #files, 1, -1
       <div class='back-to-home'>
         <a href='/' >back to main</a>
       </div>
-      <br><br>"
+      <br>"
   elseif i == 1
     next_title = files[i+1].title
     footer ..= "<br><br>
@@ -184,7 +195,7 @@ for i = #files, 1, -1
       <div class='back-to-home'>
         <a href='/' >back to main</a>
       </div>
-      <br><br>"
+      <br>"
   else
     prev_title = files[i-1].title
     next_title = files[i+1].title
@@ -205,5 +216,7 @@ for i = #files, 1, -1
       <div class='back-to-home'>
         <a href='/' >back to main</a>
       </div>
-      <br><br>"
+      <br>"
+  footer ..= get_comments!
+  footer ..= "<br><br>"
   build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
