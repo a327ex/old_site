@@ -1,0 +1,74 @@
+
+      <meta charset='uft-8'>
+      <title>20210108</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-09V5DY115J');
+      </script>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
+      <link rel='stylesheet' href='../assets/style.css'>
+      <link rel='stylesheet' href='../assets/gruvbox-dark.css'>
+      <link rel='icon' href='../assets/shun.png'>
+      <style>
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
+          ul {
+    list-style: none;
+    padding: 0.25em 0 0.25em 1em;
+  }
+
+  ul li {
+    line-height: 1.7;
+  }
+
+  ul li:after {
+    text-decoration: line-through;
+  }
+
+  ul li:before {
+    content: '✓';
+    padding-right: 0.2em;
+  }
+
+  h1 {
+    padding-top: 2em;
+  }
+
+      </style><!--
+title: 20210108
+-->
+
+<h1 id="20210108">20210108</h1>
+<ul>
+<li><del>Spark</del></li>
+<li><del>Telekinesis</del></li>
+<li><del>Orbit</del></li>
+<li><del>Accelerate</del></li>
+<li><del>Decelerate</del></li>
+<li><del>Slow</del></li>
+<li><del>Root</del></li>
+</ul>
+<p>Added 7 passives, making the game now have a total of 40. Out of these passives there's a question of how to make some of them combine with each other and existing ones. For instance, the Shotgun passive makes it so that the projectiles fired slow down and then expire over 0.5-1 seconds. This poses a problem for a passive like Orbit, which relies on projectiles living until they hit a way to have any real effectiveness. Right now I'm not doing anything about it and players would just learn to not pick up Shotgun with Orbit and vice-versa, but these combinations are easily fixable by just saying that the Shotgun projectiles' duration should be increased if the player also has the Orbit passive.</p>
+<p>Another example is the Radiation passive combined with Telekinesis, which allows the player to spawn lots of the projectiles on the screen because Telekinesis only makes the projectile move after the player releases the attack button, and the Radiation passive continually makes each projectile spawn secondary projectiles, meaning that if you have both you can flood the screen with secondary projectiles endlessly. The "fix" for this is making it so that Telekinesis projectiles automatically release themselves after a duration, like 4s, which is the way this kind of passive works in Isaac, for example.</p>
+<p>In any case, I think what I'll end up doing is just playing the game a lot eventually and as I find combinations that don't work well but that I think should work well I'll implement a special case for it and see where it goes. This will make the code more complicated but there's a lot of cool combinations that should work properly and if they don't come out of the code naturally then I guess I have to force it.</p>
+<script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script><br><br>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='20210107'>
+            <p>< 20210107</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br>
