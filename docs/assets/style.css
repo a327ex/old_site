@@ -6,6 +6,11 @@ html {
 body {
   max-width: 800px;
   margin: 0 auto 0 auto;
+  line-height: 1.5;
+}
+
+p {
+  margin-bottom: 1.25em;
 }
 
 pre, code {
