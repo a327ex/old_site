@@ -72,6 +72,10 @@ ul.social-media-list li {
   margin: 0.5em;
 }
 
+ul.social-media-list li:before {
+  content: none;
+}
+
 ul.social-media-list img {
   width: 28px;
   height: 28px;
