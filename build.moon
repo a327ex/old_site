@@ -167,7 +167,7 @@ for i = #files, 1, -1
   footer = ""
   if i == #files
     prev_title = files[i-1].title
-    footer ..= "<br><br>
+    footer ..= "<br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
@@ -184,7 +184,7 @@ for i = #files, 1, -1
       <br>"
   elseif i == 1
     next_title = files[i+1].title
-    footer ..= "<br><br>
+    footer ..= "<br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
         </div>
@@ -202,7 +202,7 @@ for i = #files, 1, -1
   else
     prev_title = files[i-1].title
     next_title = files[i+1].title
-    footer ..= "<br><br>
+    footer ..= "<br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
