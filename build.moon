@@ -68,13 +68,13 @@ get_email = ->
   ]]
 
 get_devlog = ->
-  content = [[<table width="32%%"><tr><td width="16.6%%" valign="top" align="center">]]
+  content = [[<table width="50%%"><tr><td width="16.6%%" valign="top" align="center">]]
   files = {}
   for log in io.popen("dir devlog /b")\lines!
     file_title = log\sub(1, log\find'%.'-1)
     table.insert files, file_title
   for i = #files, 1, -1
-    content ..= [[<td width="16.6%%" valign="top" align="center">]] if i == math.floor(#files/2)
+    content ..= [[<td width="16.6%%" valign="top" align="center">]] if i == math.floor(#files/3) or i == math.floor(2*#files/3)
     content ..= "<span class='devlog-title'><a href='devlog/#{files[i]}'>#{files[i]}</a></span><br>"
   content ..= [[</table>]]
   return content
@@ -88,6 +88,21 @@ get_comments = ->
       crossorigin="anonymous"
       async>
     </script>
+  ]]
+
+get_social_links = ->
+  return [[
+    <br><br><br>
+    <div align="center">
+    <ul class="social-media-list">
+      <li><a href="https://store.steampowered.com/dev/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/steam.svg" alt="Steam" title="Steam"></a></li>
+      <li><a href="https://a327ex.itch.io" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/itch-dot-io.svg" alt="itch" title="itch"></a></li>
+      <li><a href="https://twitter.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/twitter.svg" alt="Twitter" title="Twitter"></a></li>
+      <li><a href="https://github.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" alt="GitHub" title="GitHub"></a></li>
+      <li><a href="https://www.youtube.com/channel/UCFOaLI21ThFPQxJJ5lFF4SQ" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/youtube.svg" alt="YouTube" title="YouTube"></a></li>
+      <li><a href="https://reddit.com/r/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/reddit.svg" alt="reddit" title="reddit"></a></li>
+      <li><a href="https://hydancer.tumblr.com" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/tumblr.svg" alt="tumblr" title="tumblr"></a></li>
+    </ul></div><br>
   ]]
 
 convert_markdown = (file) ->
@@ -117,19 +132,7 @@ build_page = (filename, title, style, body, footer) ->
 
 -- Build main page
 body, title = convert_markdown "index.md"
-build_page "docs/index.html", title, nil, body, [[
-  <br><br><br>
-  <div align="center">
-  <ul class="social-media-list">
-    <li><a href="https://store.steampowered.com/dev/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/steam.svg" alt="Steam" title="Steam"></a></li>
-    <li><a href="https://a327ex.itch.io" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/itch-dot-io.svg" alt="itch" title="itch"></a></li>
-    <li><a href="https://twitter.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/twitter.svg" alt="Twitter" title="Twitter"></a></li>
-    <li><a href="https://github.com/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" alt="GitHub" title="GitHub"></a></li>
-    <li><a href="https://www.youtube.com/channel/UCFOaLI21ThFPQxJJ5lFF4SQ" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/youtube.svg" alt="YouTube" title="YouTube"></a></li>
-    <li><a href="https://reddit.com/r/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/reddit.svg" alt="reddit" title="reddit"></a></li>
-    <li><a href="https://hydancer.tumblr.com" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/tumblr.svg" alt="tumblr" title="tumblr"></a></li>
-  </ul></div><br>
-]]
+build_page "docs/index.html", title, nil, body, get_social_links!
 
 -- Build devlog pages
 style = [[
@@ -218,5 +221,6 @@ for i = #files, 1, -1
       </div>
       <br>"
   footer ..= get_comments!
+  footer ..= get_social_links!
   footer ..= "<br><br>"
   build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
