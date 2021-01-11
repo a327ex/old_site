@@ -11,11 +11,7 @@ I’m also currently focusing my efforts on learning how to make games of some c
 [BYTEPATH](https://store.steampowered.com/app/760330/BYTEPATH/), for example - quickly, like every two months or so. 
 This is fairly challenging and it helps keep me focused.
 
-<div align="center">
-<h2 class="links">Stay up-to-date</h2>
-I send monthly-ish emails with updates on new games and blog posts
-<p>{{email}}</p>
-</div>
+{{social}}
 
 <br>
 

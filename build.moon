@@ -23,7 +23,7 @@ get_head = (title, style) ->
           align-items: center;
           justify-content: center;
         }
-        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 250px; height: 44px; border: 1px solid #888}
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 300px; height: 44px; border: 1px solid #888}
         #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white; position: relative; top: 0px; left: -5px; margin: 0}
         #{style or ''}
       </style>"
@@ -51,7 +51,7 @@ get_head = (title, style) ->
           align-items: center;
           justify-content: center;
         }
-        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 250px; height: 44px; border: 1px solid #888}
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 300px; height: 44px; border: 1px solid #888}
         #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white; position: relative; top: 0px; left: -5px; margin: 0}
         #{style or ''}
       </style>"
@@ -100,8 +100,9 @@ get_comments = ->
     </script>
   ]]
 
+[[
 get_social_links = ->
-  return [[
+  return "
     <br><br><br>
     <div align="center">
     <ul class="social-media-list">
@@ -113,9 +114,23 @@ get_social_links = ->
       <li><a href="https://reddit.com/r/a327ex" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/reddit.svg" alt="reddit" title="reddit"></a></li>
       <li><a href="https://hydancer.tumblr.com" target="_blank"><img src="https://unpkg.com/simple-icons@latest/icons/tumblr.svg" alt="tumblr" title="tumblr"></a></li>
     </ul></div><br>
-  ]]
+  "
+]]
 
-get_footer = (i, files) ->
+get_social = ->
+  return "
+    <div align='center'><br>
+    If you'd like to follow my progress, I send monthly-ish updates via email:
+    <p>#{get_email!}</p>
+
+    You can also follow me on:
+    <a href='https://store.steampowered.com/dev/a327ex' target='_blank'>steam</a>, <a href='https://twitter.com/a327ex' target='_blank'>twitter</a>,
+    <a href='https://a327ex.itch.io' target='_blank'>itch</a>, <a href='https://github.com/a327ex' target='_blank'>github</a>, <a href='https://reddit.com/r/a327ex' target='_blank'>reddit</a>,
+    <a href='https://www.youtube.com/channel/UCFOaLI21ThFPQxJJ5lFF4SQ' target='_blank'>youtube</a> or <a href='https://hydancer.tumblr.com' target='_blank'>tumblr</a>
+    </div>
+  "
+
+get_next_prev = (i, files) ->
   if #files == 1
     return "<br>
       <div class='back-to-home'>
@@ -183,6 +198,7 @@ convert_markdown = (file) ->
   body = body\gsub '<a href="([^"]*)">', '<a href="%1" target="_blank">'
   body = body\gsub '{{email}}', get_email!
   body = body\gsub '{{devlog}}', get_devlog!
+  body = body\gsub '{{social}}', get_social!
   body = body\gsub '{{streamable ([%w]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://streamable.com/o/%1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>]]
   body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%; margin-top: -0.55em;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br>]]
   _, _, title = body\find 'title: ([^\n]*)'
@@ -205,7 +221,7 @@ build_page = (filename, title, style, body, footer) ->
 
 -- Build main page
 body, title = convert_markdown "index.md"
-build_page "docs/index.html", title, nil, body, get_social_links!
+build_page "docs/index.html", title, nil, body, "<br><br>"
 
 -- Build blog pages
 files = {}
@@ -214,17 +230,10 @@ for log in io.popen("dir blog /b")\lines!
   table.insert files, {:log, :body, :title}
 for i = #files, 1, -1
   log = files[i]
-  log.body ..= "
-    <div align='center'><br>
-    <h2 class='links'>Like what you're reading?</h2>
-    I send monthly-ish emails with updates on new games and blog posts
-    <p>#{get_email!}</p>
-    </div><br><br>
-  "
   footer = ''
-  footer ..= get_footer i, files
+  footer ..= get_next_prev i, files
+  footer ..= get_social!
   footer ..= get_comments!
-  footer ..= get_social_links!
   footer ..= "<br><br>"
   build_page "docs/blog/#{log.log\sub(1, log.log\find'%.'-1)}.html", log.title, nil, log.body, footer
 
@@ -258,8 +267,8 @@ for log in io.popen("dir devlog /b")\lines!
   table.insert files, {:log, :body, :title}
 for i = #files, 1, -1
   log = files[i]
-  footer = get_footer i, files
+  footer = get_next_prev i, files
   footer ..= get_comments!
-  footer ..= get_social_links!
+  footer ..= get_social!
   footer ..= "<br><br>"
   build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
