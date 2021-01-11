@@ -233,6 +233,7 @@ for i = #files, 1, -1
   footer = ''
   footer ..= get_next_prev i, files
   footer ..= get_social!
+  footer ..= "<br>"
   footer ..= get_comments!
   footer ..= "<br><br>"
   build_page "docs/blog/#{log.log\sub(1, log.log\find'%.'-1)}.html", log.title, nil, log.body, footer
@@ -268,7 +269,8 @@ for log in io.popen("dir devlog /b")\lines!
 for i = #files, 1, -1
   log = files[i]
   footer = get_next_prev i, files
-  footer ..= get_comments!
   footer ..= get_social!
+  footer ..= "<br>"
+  footer ..= get_comments!
   footer ..= "<br><br>"
   build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
