@@ -215,7 +215,7 @@ for log in io.popen("dir blog /b")\lines!
 for i = #files, 1, -1
   log = files[i]
   log.body ..= "
-    <div align='center'>
+    <div align='center'><br>
     <h2 class='links'>Like what you're reading?</h2>
     I send monthly-ish emails with updates on new games and blog posts
     <p>#{get_email!}</p>
