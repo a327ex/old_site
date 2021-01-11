@@ -13,10 +13,8 @@ This is fairly challenging and it helps keep me focused.
 
 <div align="center">
 <h2 class="links">Stay up-to-date</h2>
-<small>updates when a new game is released</small><br>
-<small>or when a new blog post is written</small>
-
-{{email}}
+I send monthly-ish emails with updates on new games and blog posts
+<p>{{email}}</p>
 </div>
 
 <br>

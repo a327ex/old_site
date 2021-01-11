@@ -15,11 +15,16 @@ get_head = (title, style) ->
       </script>
       <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
       <link rel='stylesheet' href='assets/style.css'>
-      <link rel='stylesheet' href='assets/gruvbox-dark.css'>
+      <link rel='stylesheet' href='assets/atom-one-light.css'>
       <link rel='icon' href='assets/shun.png'>
       <style>
-        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
-        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
+        #mc_embed_signup_scroll {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 250px; height: 44px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white; position: relative; top: 0px; left: -5px; margin: 0}
         #{style or ''}
       </style>"
   else
@@ -38,11 +43,16 @@ get_head = (title, style) ->
       </script>
       <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
       <link rel='stylesheet' href='../assets/style.css'>
-      <link rel='stylesheet' href='../assets/gruvbox-dark.css'>
+      <link rel='stylesheet' href='../assets/atom-one-light.css'>
       <link rel='icon' href='../assets/shun.png'>
       <style>
-        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 350px; border: 1px solid #888}
-        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white}
+        #mc_embed_signup_scroll {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 250px; height: 44px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white; position: relative; top: 0px; left: -5px; height: 40px; margin: 0}
         #{style or ''}
       </style>"
 
@@ -61,7 +71,7 @@ get_email = ->
         <div class="response" id="mce-success-response" style="display:none"></div>
       </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_096941f52959b1ab6e03a63fd_bd4ff37666" tabindex="-1" value=""></div>
-        <div class="clear"><input type="submit" value="Subscribe to newsletter" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
         </div>
     </form>
     </div>
@@ -204,7 +214,15 @@ for log in io.popen("dir blog /b")\lines!
   table.insert files, {:log, :body, :title}
 for i = #files, 1, -1
   log = files[i]
-  footer = get_footer i, files
+  log.body ..= "
+    <div align='center'>
+    <h2 class='links'>Like what you're reading?</h2>
+    I send monthly-ish emails with updates on new games and blog posts
+    <p>#{get_email!}</p>
+    </div><br>
+  "
+  footer = ''
+  footer ..= get_footer i, files
   footer ..= get_comments!
   footer ..= get_social_links!
   footer ..= "<br><br>"

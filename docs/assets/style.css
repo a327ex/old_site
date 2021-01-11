@@ -18,6 +18,13 @@ pre, code {
   font-size: 12pt;
 }
 
+blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: gray;
+  border-left: 0.25em solid lightgray;
+}
+
 h1, h2 {
   margin: 1em 0 1em 0;
 }
@@ -43,11 +50,19 @@ img {
   height: auto;
 }
 
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 img.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 1em 0 1em 0;
 }
 
 iframe {

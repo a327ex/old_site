@@ -47,7 +47,7 @@ determines the header level.)
 
 Images are added with `![Image Alt](./images/image.jpg)`
 
-![Image](https://i.imgur.com/sGmZr6e.png)
+<img class="center" src="https://i.imgur.com/sGmZr6e.png"></img>
 
 
 ### Blockquotes
