@@ -105,6 +105,69 @@ get_social_links = ->
     </ul></div><br>
   ]]
 
+get_footer = (i, files) ->
+  if #files == 1
+    return "<br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br>"
+  elseif i == #files
+    prev_title = files[i-1].title
+    return "<br>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='#{prev_title}'>
+            <p>< #{prev_title}</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br>"
+  elseif i == 1
+    next_title = files[i+1].title
+    return "<br>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+        </div>
+        <div class='post-post-container'>
+          <a href='#{next_title}'>
+            <p>#{next_title} ></p>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br>"
+  else
+    prev_title = files[i-1].title
+    next_title = files[i+1].title
+    return "<br>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='#{prev_title}'>
+            <p>< #{prev_title}</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+          <a href='#{next_title}'>
+            <p>#{next_title} ></p>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br>"
+
 convert_markdown = (file) ->
   body = io.popen("binaries\\pandoc -f gfm #{file}", "r")\read"*a"
   body = body\gsub '<a href="([^"]*)">', '<a href="%1" target="_blank">'
@@ -133,6 +196,19 @@ build_page = (filename, title, style, body, footer) ->
 -- Build main page
 body, title = convert_markdown "index.md"
 build_page "docs/index.html", title, nil, body, get_social_links!
+
+-- Build blog pages
+files = {}
+for log in io.popen("dir blog /b")\lines!
+  body, title = convert_markdown "blog/#{log}"
+  table.insert files, {:log, :body, :title}
+for i = #files, 1, -1
+  log = files[i]
+  footer = get_footer i, files
+  footer ..= get_comments!
+  footer ..= get_social_links!
+  footer ..= "<br><br>"
+  build_page "docs/blog/#{log.log\sub(1, log.log\find'%.'-1)}.html", log.title, nil, log.body, footer
 
 -- Build devlog pages
 style = [[
@@ -164,62 +240,7 @@ for log in io.popen("dir devlog /b")\lines!
   table.insert files, {:log, :body, :title}
 for i = #files, 1, -1
   log = files[i]
-  footer = ""
-  if i == #files
-    prev_title = files[i-1].title
-    footer ..= "<br>
-      <div class='next-prev-post'>
-        <div class='post-post-container'>
-          <a href='#{prev_title}'>
-            <p>< #{prev_title}</p>
-          </a>
-        </div>
-        <div class='post-post-container'>
-        </div>
-      </div>
-      <br>
-      <div class='back-to-home'>
-        <a href='/' >back to main</a>
-      </div>
-      <br>"
-  elseif i == 1
-    next_title = files[i+1].title
-    footer ..= "<br>
-      <div class='next-prev-post'>
-        <div class='post-post-container'>
-        </div>
-        <div class='post-post-container'>
-          <a href='#{next_title}'>
-            <p>#{next_title} ></p>
-          </a>
-        </div>
-      </div>
-      <br>
-      <div class='back-to-home'>
-        <a href='/' >back to main</a>
-      </div>
-      <br>"
-  else
-    prev_title = files[i-1].title
-    next_title = files[i+1].title
-    footer ..= "<br>
-      <div class='next-prev-post'>
-        <div class='post-post-container'>
-          <a href='#{prev_title}'>
-            <p>< #{prev_title}</p>
-          </a>
-        </div>
-        <div class='post-post-container'>
-          <a href='#{next_title}'>
-            <p>#{next_title} ></p>
-          </a>
-        </div>
-      </div>
-      <br>
-      <div class='back-to-home'>
-        <a href='/' >back to main</a>
-      </div>
-      <br>"
+  footer = get_footer i, files
   footer ..= get_comments!
   footer ..= get_social_links!
   footer ..= "<br><br>"

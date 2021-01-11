@@ -21,7 +21,14 @@ This is fairly challenging and it helps keep me focused.
 
 <br>
 
-## Blog
+## blog
+
+<div class="post"><span class="post-date">2021-01-10</span> <span class="post-title"><a href='blog/styling-test'>Styling Test</a></span></div>
+
+<br>
+<br>
+
+## github blog
 
 <div class="post"><span class="post-date">2020-12-23</span> <span class="post-title"><a href="https://github.com/a327ex/blog/issues/66" target="_blank">Borders vs. No Borders</a></span></div>
 <div class="post"><span class="post-date">2020-12-23</span> <span class="post-title"><a href="https://github.com/a327ex/blog/issues/63" target="_blank">New Programming Taxonomies</a></span></div>
@@ -79,6 +86,6 @@ This is fairly challenging and it helps keep me focused.
 <br>
 <br>
 
-## Devlog
+## devlog
 
 {{devlog}}
