@@ -1,0 +1,134 @@
+
+      <meta charset='uft-8'>
+      <title>20210113</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-09V5DY115J');
+      </script>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
+      <link rel='stylesheet' href='../assets/style.css'>
+      <link rel='stylesheet' href='../assets/atom-one-light.css'>
+      <link rel='icon' href='../assets/shun.png'>
+      <style>
+        #mc_embed_signup_scroll {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 300px; height: 44px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white; position: relative; top: 0px; left: -5px; margin: 0}
+          ul {
+    list-style: none;
+    padding: 0.25em 0 0.25em 1em;
+  }
+
+  ul li {
+    line-height: 1.7;
+  }
+
+  ul li:after {
+    text-decoration: line-through;
+  }
+
+  ul li:before {
+    content: '✓';
+    padding-right: 0.2em;
+  }
+
+  h1 {
+    padding-top: 2em;
+  }
+
+      </style><!--
+title: 20210113
+-->
+
+<h1 id="20210113">20210113</h1>
+<ul>
+<li>Lv0-5 Progression
+<ul>
+<li>Enemies
+<ul>
+<li><del>Shooter</del></li>
+<li>Turret</li>
+</ul></li>
+<li><del>Basic enemy HP scaling</del></li>
+<li>Item
+<ul>
+<li>BreakableItem object</li>
+<li>PassiveDescription object</li>
+</ul></li>
+<li>Shop
+<ul>
+<li>ShopCard object</li>
+</ul></li>
+<li>Arena
+<ul>
+<li>Worm - 45 degree movement, bounces from wall to wall and has multiple segments; when a segment is destroyed it becomes multiple turrets that fire and the remaining worm moves faster and fires too</li>
+</ul></li>
+<li>Enemy Progression
+<ul>
+<li><del>Lv.0 Seeker (10%C, 100%)</del></li>
+<li><del>Lv.1 Seeker (15%C, 80%) + Shooter (20%)</del></li>
+<li><del>Lv.2 Seeker (20%C, 70%) + Shooter (10%C, 30%)</del></li>
+<li>Lv.3 Seeker (10%C, 80%) + Shooter (10%C, 10%) + Turret (10%)</li>
+<li>Lv.4 Seeker (25%C, 70%) + Turret (10%C, 30%)</li>
+<li>Lv.5 Seeker (20%C, 50%) + Turret (20%C, 25%) + Shooter (20%C, 25%)</li>
+</ul></li>
+<li><del>Timed Progression</del>
+<ul>
+<li><del>Lv.0 20s; Lv.1 25s; Lv.2 30s; Lv.3 30s; Lv.4 30/45s; Lv.5 30/45/60s</del></li>
+</ul></li>
+<li>Wave Mode
+<ul>
+<li>Each wave is similar to a timed wave, except spawns are frontloaded rather than separated by time, meaning this benefits AoE and makes dodging harder</li>
+</ul></li>
+<li>Kill Mode
+<ul>
+<li>Simply spawn N enemies at an interval and end spawning when a certain number is killed, increase speed and overlap of spawns the closer it is to being done</li>
+</ul></li>
+<li>Classes
+<ul>
+<li>Vagrant
+<ul>
+<li>Lv.1 Secondary Skill Unlock - Secondary: ?</li>
+<li>Lv.3 Special Skill Unlock - Special: ?</li>
+</ul></li>
+<li>Lv.5 Class Tier 1 Unlock
+<ul>
+<li>Monk - Primary: ?</li>
+<li>Archer - Primary: ?</li>
+<li>Cycler - Primary: ?</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Spent the past 2 days relaxing and I guess mostly thinking about where I want to take the game from here. This is one of those parts of development where I generally have the most freedom and thus it's also generally the part where I drop games the most (around ~1 month after devving on a game). This happens because there's always a part where I have to make decisions regarding progress in the game, like how enemy progress will happen, which enemies will spawn in which parts, how their health will go up, how their spawning works, etc. It's a lot of decisions and if you don't have a very clear idea of what you want it's easy to get lost.</p>
+<p>But I think I've decided on a good direction now which is basically a level up system for both the game and the player, where levels for the game are a node's distance from the start, and level for the player is literally just a level/XP bar.</p>
+<p>As levels for the game go up, enemy HP increases linearly (will likely change this more in the future as I test things out more) and the kinds of enemies as well as variation of spawning types increases. While on Lv.0 only 1 type of enemy can be spawned and only 1 type of challenge mode can be used in normal nodes (time left), as the player goes further into the map more enemy types can be spawned and in different ways as well. The arena itself generally remains the same because I don't want to spend effort making levels.</p>
+<p>As levels for the player goes up, he unlocks different skills as well as different classes. Classes can have active or passive bonuses, as well as primary, secondary or special skills. Basically I want classes to be my main focus design-wise and to give the player a feeling of class exploration, similar to what happens in MMOs with lots of classes like Tree of Savior. Sadly this game doesn't have actual graphics because making different clothes for each class would be cool too, but I guess that'll have to wait for a future game.</p>
+<p>The system for class unlocking is going to be similar to ToS', where you unlock your primary class at a certain level, and then every N levels after that you can choose one from the entire pool of classes. Entirely utility-based classes should exist, and players will generally avoid picking those at earlier levels, but then they make more sense the further you go into the game. OP classes will also exist, but they generally should lock the player out of a bigger portion of the game. For instance, if there's an OP class that makes the player's cycles go really fast, maybe this class prevents him from having a primary attack in the first place and his attacks can only happen through cycle triggers.</p>
+<p>Finally, I also watched a cool talk today:</p>
+<p><div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.3%; margin-top: -0.55em;"><iframe src="https://www.youtube.com/embed/wb22xeh_VqM?rel=0&playlist=wb22xeh_VqM&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br></p>
+<p>Combined with <a href="https://howtomarketagame.com/2021/01/04/happy-2021-you-are-going-to-finish-a-game-this-year/" target="_blank">this article</a> from the other day both of these messages really resonate with me, yet I can't help but try to make something slightly bigger. I really enjoy the mix-and-matching aspect of games and sadly it's kind of hard to make those happen in a 1 month period, which is why I'm aiming for 2 months instead. I feel like this current project will be the final test of my ability to do this or not, and if I end up failing and not delivering this game by next month I should just follow the advice from the video and try to make things that are even smaller and in a shorter period. I know for a fact that I can work on something for at least 1 month without dropping it so at least that should work. The only sad part is that I'd have to think about some really lower scope games, but maybe that would end up being a good thing, who knows.</p>
+<script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script><br>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='20210110'>
+            <p>< 20210110</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br><br>
