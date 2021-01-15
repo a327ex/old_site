@@ -101,6 +101,10 @@ ul.social-media-list img {
   height: 28px;
 }
 
+div.title-date {
+  margin-top: -2em;
+}
+
 .post { 
   margin-top: 0.6em;
 }

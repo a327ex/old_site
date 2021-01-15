@@ -200,19 +200,26 @@ convert_markdown = (file) ->
   body = body\gsub '{{devlog}}', get_devlog!
   body = body\gsub '{{social}}', get_social!
   body = body\gsub '{{streamable ([%w]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://streamable.com/o/%1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>]]
-  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%; margin-top: -0.55em;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1&autoplay=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br>]]
+  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%; margin-top: -0.55em;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br>]]
   _, _, title = body\find 'title: ([^\n]*)'
   _, _, date = body\find 'date: ([^\n]*)'
+  _, _, update = body\find 'update: ([^\n]*)'
   _, _, tags = body\find 'tags: ([^\n]*)'
   content = ''
   content ..= body
   if file == "index.md" then content ..= [[<script src="assets/zoom.min.js"></script><script src="assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>]]
   else content ..= [[<script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>]]
-  return content, title, date, tags
+  return content, title, date, update, tags
 
-build_page = (filename, title, style, body, footer) ->
+build_page = (filename, title, style, date, update, body, footer) ->
   content = ''
   content ..= get_head title, style
+  if filename != "docs/index.html"
+    content ..= "<div align='center'><h1>#{title}</h1>"
+    content ..= "<div class='title-date'>"
+    content ..= "<small><i>published on: #{date}</i></small><br>" if date
+    content ..= "<small><i>last updated on: #{update}</i></small>" if update
+    content ..= "<br><br></div></div>"
   content ..= body
   content ..= footer
   file = io.open filename, "w"
@@ -220,14 +227,14 @@ build_page = (filename, title, style, body, footer) ->
   file\close!
 
 -- Build main page
-body, title = convert_markdown "index.md"
-build_page "docs/index.html", title, nil, body, "<br><br>"
+body, title, date, update = convert_markdown "index.md"
+build_page "docs/index.html", title, nil, date, update, body, "<br><br>"
 
 -- Build blog pages
 files = {}
 for log in io.popen("dir blog /b")\lines!
-  body, title = convert_markdown "blog/#{log}"
-  table.insert files, {:log, :body, :title}
+  body, title, date, update = convert_markdown "blog/#{log}"
+  table.insert files, {:log, :body, :title, :date, :update}
 for i = #files, 1, -1
   log = files[i]
   footer = ''
@@ -236,7 +243,7 @@ for i = #files, 1, -1
   footer ..= "<br>"
   footer ..= get_comments!
   footer ..= "<br><br>"
-  build_page "docs/blog/#{log.log\sub(1, log.log\find'%.'-1)}.html", log.title, nil, log.body, footer
+  build_page "docs/blog/#{log.log\sub(1, log.log\find'%.'-1)}.html", log.title, nil, log.date, log.update, log.body, footer
 
 -- Build devlog pages
 style = [[
@@ -270,4 +277,4 @@ for i = #files, 1, -1
   log = files[i]
   footer = get_next_prev i, files
   footer ..= "<br><br>"
-  build_page "docs/devlog/#{log.title}.html", log.title, style, log.body, footer
+  build_page "docs/devlog/#{log.title}.html", log.title, style, nil, nil, log.body, footer

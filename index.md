@@ -17,7 +17,7 @@ This is fairly challenging and it helps keep me focused.
 
 ## blog
 
-<div class="post"><span class="post-date">2021-01-10</span> <span class="post-title"><a href='blog/styling-test'>Styling Test</a></span></div>
+<div class="post"><span class="post-date">2021-01-15</span> <span class="post-title"><a href='blog/game-ideas'>Game Ideas</a></span></div>
 
 <br>
 <br>
