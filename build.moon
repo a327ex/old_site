@@ -264,10 +264,6 @@ style = [[
     content: '✓';
     padding-right: 0.2em;
   }
-
-  h1 {
-    padding-top: 2em;
-  }
 ]]
 files = {}
 for log in io.popen("dir devlog /b")\lines!
