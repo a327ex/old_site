@@ -22,7 +22,7 @@ There's a good argument to be made that because programming convention is 0-base
 There's also a good argument to be made that Lua should be a more batteries included language because that makes it more useful generally. This is also true.
 
 But Lua, as I just explained, is a fundamentally borderless language. It's entire way of operating constantly places the user is a very borderless and chaotic environment by design
-where they constantly have to mix and match its basic building blocks to do things from scratch themselves. *"It's taxing, it's unnecessary."*, the bordered thinker would say.
+where they constantly have to mix and match its basic building blocks to do things from scratch themselves. *"It's taxing, it's unnecessary"*, the bordered thinker would say.
 
 People who don't like such borderless environments will not like Lua. Maybe those people should have early signals available to them that they won't like the language?
 I think there's hardly a better way to do that than to break small conventions left and right, like indexing.
