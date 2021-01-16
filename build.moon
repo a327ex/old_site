@@ -143,7 +143,7 @@ get_next_prev = (i, files) ->
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
-            <p>< #{prev_title}</p>
+            <p>< #{files[i-1].title}</p>
           </a>
         </div>
         <div class='post-post-container'>
@@ -162,7 +162,7 @@ get_next_prev = (i, files) ->
         </div>
         <div class='post-post-container'>
           <a href='#{next_title}'>
-            <p>#{next_title} ></p>
+            <p>#{files[i+1].title} ></p>
           </a>
         </div>
       </div>
@@ -178,12 +178,12 @@ get_next_prev = (i, files) ->
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
-            <p>< #{prev_title}</p>
+            <p>< #{files[i-1].title}</p>
           </a>
         </div>
         <div class='post-post-container'>
           <a href='#{next_title}'>
-            <p>#{next_title} ></p>
+            <p>#{files[i+1].title} ></p>
           </a>
         </div>
       </div>
