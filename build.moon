@@ -138,7 +138,7 @@ get_next_prev = (i, files) ->
       </div>
       <br>"
   elseif i == #files
-    prev_title = files[i-1].title
+    prev_title = files[i-1].md_title or files[i-1].title
     return "<br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
@@ -155,7 +155,7 @@ get_next_prev = (i, files) ->
       </div>
       <br>"
   elseif i == 1
-    next_title = files[i+1].title
+    next_title = files[i+1].md_title or files[i+1].title
     return "<br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
@@ -172,8 +172,8 @@ get_next_prev = (i, files) ->
       </div>
       <br>"
   else
-    prev_title = files[i-1].title
-    next_title = files[i+1].title
+    prev_title = files[i-1].md_title or files[i-1].title
+    next_title = files[i+1].md_title or files[i+1].title
     return "<br>
       <div class='next-prev-post'>
         <div class='post-post-container'>
@@ -234,7 +234,7 @@ build_page "docs/index.html", title, nil, date, update, body, "<br><br>"
 files = {}
 for log in io.popen("dir blog /b")\lines!
   body, title, date, update = convert_markdown "blog/#{log}"
-  table.insert files, {:log, :body, :title, :date, :update}
+  table.insert files, {:log, :body, :title, :date, :update, md_title: log\sub(1, log\find'%.'-1)}
 for i = #files, 1, -1
   log = files[i]
   footer = ''
