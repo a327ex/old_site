@@ -21,16 +21,18 @@ What does this have to do with 1-based indexing? People who like borders like th
 There's a good argument to be made that because programming convention is 0-based indexes, Lua should just follow it, which would decrease the cognitive load of working with it. This is true.
 There's also a good argument to be made that Lua should be a more batteries included language because that makes it more useful generally. This is also true.
 
-But Lua, as I just explained, is a fundamentally borderless language. It's entire way of operating constantly places the user is a very borderless and chaotic environment by design.
-People who don't like borderless environments will not like Lua, and maybe those people should have early signals available to them that they won't like the language.
+But Lua, as I just explained, is a fundamentally borderless language. It's entire way of operating constantly places the user is a very borderless and chaotic environment by design
+where they constantly have to mix and match its basic building blocks to do things from scratch themselves. *"It's taxing, it's unnecessary."*, the bordered thinker would say.
+
+People who don't like such borderless environments will not like Lua. Maybe those people should have early signals available to them that they won't like the language?
 I think there's hardly a better way to do that than to break small conventions left and right, like indexing.
 
 So it is my argument that 1-based indexing acts as a barrier against people who wouldn't enjoy Lua in the first place.
 If you're the kind of person who doesn't want to deal with the very small increased cognitive load that comes with 1-based indexing,
 you're likely not going to want to deal with the larger amounts of it that come with using the rest of the language. 
 
-I obviously don't think this happened intentionally, it's just a happy coincidence. I also don't think that language designers should randomly break (or follow) conventions mindlessly.
-In this case this is a convention break that makes sense, but it wouldn't make sense for instance to make it 2-indexed, as that obviously serves no purpose.
+I obviously don't think this happened intentionally, it's just a happy coincidence. I also don't think that language designers should break (or follow) conventions mindlessly.
+In this case this convention break makes sense, but it wouldn't make sense for instance to make it 2-indexed, as that obviously serves no purpose.
 
-I also don't think there's anything wrong with people who don't enjoy borderlessness, dynamic typing, or 1-based indexing. Everyone has different preferences.
+I also don't think there's anything wrong with people who don't enjoy borderlessness environments, dynamic typing or 1-based indexes in general. Everyone has different preferences.
 But I definitely think those people shouldn't be using Lua and that the language shouldn't be catering to them, and that's a good thing.
