@@ -101,6 +101,19 @@ get_devlog = ->
   content ..= [[</table>]]
   return content
 
+get_blog = ->
+  files = {}
+  for file in io.popen("dir blog /b")\lines!
+    body = io.popen("binaries\\pandoc -f gfm #{file}", "r")\read"*a"
+    file_title = log\sub(1, log\find'%.'-1)
+    table.insert files, {md_title: file_title, :body}
+  content = ''
+  for i = #files, 1, -1
+    _, _, title = files[i].body\find 'title: ([^\n]*)'
+    _, _, date = files[i].body\find 'date: ([^\n]*)'
+    content ..= "<div class='post'><span class='post-date'>#{date}</span> <span class='post-title'><a href='blog/#{files[i].md_title}'>#{title}</a></span></div>"
+  return content
+
 get_comments = ->
   return [[
     <script src="https://utteranc.es/client.js"
@@ -211,6 +224,7 @@ convert_markdown = (file) ->
   body = body\gsub '{{email}}', get_email!
   body = body\gsub '{{devlog}}', get_devlog!
   body = body\gsub '{{social}}', get_social!
+  body = body\gsub '{{blog}}', get_blog!
   body = body\gsub '{{streamable ([%w]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://streamable.com/o/%1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>]]
   body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%; margin-top: -0.55em;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br>]]
   _, _, title = body\find 'title: ([^\n]*)'

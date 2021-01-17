@@ -17,8 +17,7 @@ This is fairly challenging and it helps keep me focused.
 
 ## blog
 
-<div class="post"><span class="post-date">2021-01-16</span> <span class="post-title"><a href='blog/lua-1-index'>Why 1-based indexing is right for Lua</a></span></div>
-<div class="post"><span class="post-date">2021-01-15</span> <span class="post-title"><a href='blog/game-ideas'>Game Ideas</a></span></div>
+{{blog}}
 
 <br>
 <br>
