@@ -104,8 +104,8 @@ get_devlog = ->
 get_blog = ->
   files = {}
   for file in io.popen("dir blog /b")\lines!
-    body = io.popen("binaries\\pandoc -f gfm #{file}", "r")\read"*a"
-    file_title = log\sub(1, log\find'%.'-1)
+    body = io.popen("binaries\\pandoc -f gfm blog/#{file}", "r")\read"*a"
+    file_title = file\sub(1, file\find'%.'-1)
     table.insert files, {md_title: file_title, :body}
   content = ''
   for i = #files, 1, -1
