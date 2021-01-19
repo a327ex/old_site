@@ -1,0 +1,118 @@
+
+      <meta charset='uft-8'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <title>20210118</title>
+      <meta property='og:title' content='20210118'>
+      <meta property='og:image' content='https://a327ex.github.io/assets/shun.png'>
+      <meta property='og:site_name' content='adn's web page'>
+      <meta name='twitter:card' content='summary'>
+      <meta name='twitter:title' content='20210118'>
+      <meta name='twitter:image' content='https://a327ex.github.io/assets/shun.png'>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-09V5DY115J');
+      </script>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap'>
+      <link rel='stylesheet' href='../assets/style.css'>
+      <link rel='stylesheet' href='../assets/atom-one-light.css'>
+      <link rel='icon' href='../assets/shun.png'>
+      <style>
+        #mc_embed_signup_scroll {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #mc_embed_signup #mce-EMAIL {font-family: 'Roboto',sans-serif; font-size: 14pt; font-weight: 400; padding: 0.4em; width: 300px; height: 44px; border: 1px solid #888}
+        #mc_embed_signup #mc-embedded-subscribe {cursor: pointer; font-familty: 'Roboto',sans-serif; font-size: 16pt; font-weight: 600; margin-top: 0.4em; margin-bottom: 0.5em; border: 1px solid black; padding: 0.4em; background-color: black; color: white; position: relative; top: 0px; left: -5px; margin: 0}
+          ul {
+    list-style: none;
+    padding: 0.25em 0 0.25em 1em;
+  }
+
+  ul li {
+    line-height: 1.7;
+  }
+
+  ul li:after {
+    text-decoration: line-through;
+  }
+
+  ul li:before {
+    content: '✓';
+    padding-right: 0.2em;
+  }
+
+      </style><div align='center'><h1>20210118</h1><div class='title-date'><br><br></div></div><!--
+title: 20210118
+-->
+
+<ul>
+<li>Lv0-5 Progression
+<ul>
+<li><del>Enemies</del>
+<ul>
+<li><del>Shooter</del></li>
+<li><del>Turret</del></li>
+</ul></li>
+<li><del>Basic enemy HP scaling</del></li>
+<li>Item
+<ul>
+<li>BreakableItem object</li>
+<li>PassiveDescription object</li>
+</ul></li>
+<li>Shop
+<ul>
+<li>ShopCard object</li>
+</ul></li>
+<li><del>Arena</del>
+<ul>
+<li><del>Outlier</del></li>
+<li><del>Sleeper</del></li>
+</ul></li>
+<li><del>Enemy Progression</del>
+<ul>
+<li><del>Lv.0 Seeker (10%C, 100%)</del></li>
+<li><del>Lv.1 Seeker (15%C, 80%) + Shooter (20%)</del></li>
+<li><del>Lv.2 Seeker (20%C, 70%) + Shooter (10%C, 30%)</del></li>
+<li><del>Lv.3 Seeker (10%C, 80%) + Shooter (10%C, 10%) + Turret (10%)</del></li>
+<li><del>Lv.4 Seeker (25%C, 70%) + Turret (10%C, 30%)</del></li>
+<li><del>Lv.5 Seeker (20%C, 50%) + Turret (20%C, 25%) + Shooter (20%C, 25%)</del></li>
+</ul></li>
+<li><del>Timed Progression</del>
+<ul>
+<li><del>Lv.0 20s; Lv.1 25s; Lv.2 30s; Lv.3 30s; Lv.4 30/45s; Lv.5 30/45/60s</del></li>
+</ul></li>
+<li><del>Wave Mode</del>
+<ul>
+<li><del>Max waves: Lv.0 2; Lv.1 2; Lv.2 2-3; Lv.3 3; Lv.4 3; Lv.5 3-4</del></li>
+<li><del>Each wave is similar to a timed wave, except spawns are frontloaded rather than separated by time, meaning this benefits AoE and makes dodging harder</del></li>
+</ul></li>
+<li>Kill Mode
+<ul>
+<li>Simply spawn N enemies at an interval and end spawning when a certain number is killed, increase speed and overlap of spawns the closer it is to being done</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Added the last enemy for up to Lv.5 nodes, added spawning and progression for this enemy and also the wave mode. This last one is still shaky and mostly untested so I'll have to come back to it tomorrow too.</p>
+<p>More importantly I figured out how I want 2 of the main systems in the game to work: the skill tree and the class system. The skill tree will be a "Mystery Skill Tree" where each node gives you a random passive based on a few contraints. A node might say "Contains a minor passive related to damage" and then when you buy it you'll get a random minor passive related to damage from a pool, like <em>+0.5 damage</em> or <em>+2 damage for 1s after knocking back an enemy</em>. You have no control over what the passive will be other than its relation to damage. This creates a nice dynamic where the player will want to explore the tree in roughly the kind of build he wants to try, but not with so much confidence that he can get the things he wants every time.</p>
+<p>The class system will operate with a similar basis. As you go through the game you get class points and then you can spend them in a gacha system. You'll get new classes from a pool of specific types based on your first class choice (Monk, Archer or Engineer), but other than that they're pretty random. Because classes are very big in terms of how they change the way you play, this should give the player a counterbalance in terms of randomness that comes from the tree. While the tree isn't 100% deterministic choice, it's more deterministic than most systems roguelites use to distribute passives, either randomly choose from a pool with no specification possible, or a "choose 1 out of 3" system. This means that this increase in determinism from the tree needs a counterbalancing decrease somewhere else to keep things interesting, and I think that this class system will achieve that.</p>
+<script src="../assets/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script><br>
+      <div class='next-prev-post'>
+        <div class='post-post-container'>
+          <a href='20210117'>
+            <p>< 20210117</p>
+          </a>
+        </div>
+        <div class='post-post-container'>
+        </div>
+      </div>
+      <br>
+      <div class='back-to-home'>
+        <a href='/' >back to main</a>
+      </div>
+      <br><br><br>
