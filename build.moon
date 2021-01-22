@@ -226,7 +226,8 @@ convert_markdown = (file) ->
   body = body\gsub '{{social}}', get_social!
   body = body\gsub '{{blog}}', get_blog!
   body = body\gsub '{{streamable ([%w]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%;"><iframe src="https://streamable.com/o/%1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media"></iframe></div>]]
-  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%; margin-top: -0.55em;"><iframe src="https://www.youtube.com/embed/%1?rel=0&playlist=%1&loop=1&modestbranding=1" style="border: 0; top: 0; left: 0; width: 100%%; height: 100%%; position: absolute;" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br>]]
+  body = body\gsub '{{youtube ([%w-_]*)}}', [[<div style="left: 0; width: 100%%; height: 0; position: relative; padding-bottom: 56.3%%; margin-top: -0.55em;"><iframe width="100%%" height="100%%" src="https://www.youtube.com/embed/%1?rel=0&modestbranding=1&feature=oembed" style="border: 0; top: 0; left: 0; position: absolute" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture"></iframe></div><br>]]
+
   _, _, title = body\find 'title: ([^\n]*)'
   _, _, date = body\find 'date: ([^\n]*)'
   _, _, update = body\find 'update: ([^\n]*)'
