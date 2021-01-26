@@ -90,13 +90,14 @@ get_email = ->
   ]]
 
 get_devlog = ->
-  content = [[<table width="50%%"><tr><td width="16.6%%" valign="top" align="center">]]
+  content = [[<table width="100%%"><tr><td width="16.6%%" valign="top" align="center">]]
   files = {}
   for log in io.popen("dir devlog /b")\lines!
     file_title = log\sub(1, log\find'%.'-1)
     table.insert files, file_title
   for i = #files, 1, -1
-    content ..= [[<td width="16.6%%" valign="top" align="center">]] if i == math.floor(#files/3) or i == math.floor(2*#files/3)
+    if i == math.floor(#files/6) or i == math.floor(2*#files/6) or i == math.floor(3*#files/6) or i == math.floor(4*#files/6) or i == math.floor(5*#files/6)
+      content ..= [[<td width="16.6%%" valign="top" align="center">]]
     content ..= "<span class='devlog-title'><a href='devlog/#{files[i]}'>#{files[i]}</a></span><br>"
   content ..= [[</table>]]
   return content
