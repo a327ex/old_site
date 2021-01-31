@@ -146,7 +146,7 @@ get_social_links = ->
 get_social = ->
   return "
     <div align='center'><br>
-    If you'd like to follow my progress, I send monthly-ish updates via email:
+    If you'd like to follow my progress, I send updates via email every time a new game is released:
     <p>#{get_email!}</p>
 
     You can also follow me on:

@@ -1,7 +1,7 @@
 <!--
 title: Game Ideas
 date: 2021-01-15
-update: 2021-01-30
+update: 2021-01-31
 -->
 
 ## Anime PoE MMO
@@ -78,6 +78,39 @@ time doing it, they sort of had to force it on everyone. In anime PoE, lab-like 
 classes, like say treasure hunters, and then no one has to interact with it, other than people who really enjoy that content. Basically every league PoE has that people have
 strong aversions to can be made into class specific content so that the people who like that kind of thing can willingly choose to do it and get rewarded for it in a way
 that others can't. All of this content can then be made much cheaper, because it doesn't have to justify itself to the rest of the playerbase.
+
+### Annoyance
+
+More generally, PoE has the following problem aptly pointed out by some redditors:
+
+<img class="center" src="https://i.imgur.com/a8Nn0Rx.png"></img>
+
+The way PoE devs decided to limit access to content is through annoyance, and this happens everywhere in the game, from trading to crafting to ascending your character.
+If they didn't do this people would get too powerful too fast, and the game would be trivially easy. And if they didn't have the ability for people to get powerful in
+the first place the game would be boring.
+
+The general solution to this problem, in my view, is more specialization and more socialization. In our society, getting more "powerful" is also annoying,
+but people can freely choose how exactly they want to be annoyed by the profession they pick. I chose game development because I like it,
+and I can deal with all of its annoyances because of that. And when I produce something of high value, like a really good video game, people will be able to trade with me
+for the things of value they built instead.
+
+PoE is moving towards this direction by allowing people to focus on different aspects of the game in their end game content, but it's a bandaid fix.
+The fundamental issue is that the game has no clearly defined specializations, which means that anyone can do anything, and so like the post mentioned you can get people
+who do really crazy stuff and deal with all the annoyance the game puts in their path, and you also get people who don't want to deal with any of that (me) who miss out
+on it.
+
+Specialization fixes this by saying: you can only get this crazy thing if you're this specific class, and if you're this specific class you're giving up being another
+specific class that would allow you to do another thing better. So if someone wants to do crazy crafts, they pick one of the classes that lets you do crazy crafts,
+but that prevents them from picking the class that lets them find crazy materials for their crafts.
+
+This separation of concerns means that individuals are focused on different tasks, and when that happens you introduce a natural barrier to content access.
+Now instead of you having to limit trading because it trading was too easy you'd get too powerful characters, trading can happen normally because what limits character
+power is coordination between multiple people, since no one person can do everything themselves. This coordination increases socialization, which makes the game
+more like an MMO.
+
+So the best guilds are the guilds that have the best coordination between their members, and thus they can craft the best equipment, or find the best hunting spots,
+or find the best mining spots, etc. From specialization you get socialization, and from socialization you get a real MMO, and it simultaneously solves the annoyance
+problem.
 
 <br>
 
