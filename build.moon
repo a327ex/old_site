@@ -268,6 +268,11 @@ files = {}
 for log in io.popen("dir blog /b")\lines!
   body, title, date, update = convert_markdown "blog/#{log}"
   table.insert files, {:log, :body, :title, :date, :update, md_title: log\sub(1, log\find'%.'-1)}
+table.sort files, ((a, b) ->
+  _, _, date_a = a.body\find 'date: ([^\n]*)'
+  _, _, date_b = b.body\find 'date: ([^\n]*)'
+  return date_a < date_b
+)
 for i = #files, 1, -1
   log = files[i]
   footer = ''

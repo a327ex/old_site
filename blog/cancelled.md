@@ -1,5 +1,5 @@
 <!--
-title: Why indie developers shouldn't fear being cancelled
+title: Why indiedevs shouldn't fear being cancelled
 date: 2021-02-02
 update: 2021-02-02
 -->
