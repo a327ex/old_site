@@ -18,7 +18,8 @@ And depending on the kind of person you are this actually works.
 If you don't really have that many contentious opinions in the first place (which is the case for most people), there's very little harm in just not really mentioning the few that you do.
 Why be a difficult person instead of just being nice and getting along with everyone, right?
 
-But I personally value being able to speak freely about contentious subjects and opinions (even if I don't personally believe in them), so being quiet doesn't really work for me.
+But I personally value being able to speak freely about contentious subjects and opinions, so being quiet doesn't really work for me.
+I have an inherent need to speak without fearing being heard.
 
 The next thing people try is the opposite, which is to be purposefully contentious and edgy, and it actually works too.
 When people know you're that kind of person, whenever you say anything upsetting it's only to be expected and it's not a surprise, so it works as a shield.

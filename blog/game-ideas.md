@@ -1,7 +1,7 @@
 <!--
 title: Game Ideas
 date: 2021-01-15
-update: 2021-01-31
+update: 2021-02-03
 -->
 
 ## Anime PoE MMO
@@ -62,7 +62,8 @@ this huge world in a coherent way and selling their maps to other players, craft
 cartographers about different spawns of enemies, minerals, bosses, etc.
 
 You could also have classes like wayfarers, who are concerned with creating portals between different places so adventurers don't have to walk all the way from their grinding
-spots to the city and back. You could have classes like squires, who could either be able to setup camps outside the main city, or who could serve as servants for other players,grabbing items from the city for them so they don't have to walk back, and so on.
+spots to the city and back. You could have classes like squires, who could either be able to setup camps outside the main city, or who could serve as servants for other players,
+grabbing items from the city for them so they don't have to walk back, and so on.
 
 The main idea is that the city is in the center of the map, and the map expands outwards with enemies all around the city, growing in difficulty the further away you get.
 The map would be procedurally generated and it would be absolutely massive. Just like in PoE there would be little to no quests, and players would simply focus on grinding
@@ -111,6 +112,119 @@ more like an MMO.
 So the best guilds are the guilds that have the best coordination between their members, and thus they can craft the best equipment, or find the best hunting spots,
 or find the best mining spots, etc. From specialization you get socialization, and from socialization you get a real MMO, and it simultaneously solves the annoyance
 problem.
+
+### Specialization
+
+To dig a little deeper into the specialization problem, if PoE simply added specialization to it nothing would change much. Let's say that you needed to be a specific class to craft
+specific modifiers, a specific class to be able to gain access specific materials, and a specific class to be able to alter those materials in such a way that the first class can craft them.
+
+We've now divided the crafting of a few specific modifiers into 3 classes, and they're all needed for making the process work. As PoE stands right now, this wouldn't really prevent individuals
+from crafting those items as much as they wanted, it would only add more annoyance, which would defeat the purpose of adding specialization in the first place. Why would this happen?
+
+Because PoE is a game made to be played very fast in comparison to most MMOs. Most experienced players can reach a fairly high level in it in just a few days, and unless the crafting of these
+specific modifiers was gated in the 3 class behind LOTS of grinding, individuals would just spend 1 day making each different character and then when they needed something they would go through
+the process with their multiple characters. The game is built to encourage this kind of behavior, so simply adding this kind of specialization to it wouldn't work.
+
+The way to make it work is to change the game significantly to not encourage character remaking as often as PoE does, and there are multiple ways to achieve this. One would be adding very onerous
+tasks, cinematics, dialogue, etc, anything that isn't directly gameplay related that gets in the player's way before he can actually start grinding the game.
+
+This is a tactic used by Genshin Impact, for instance, to prevent account rerolls. To reroll an account in that game you need to get to level 7, and this would be trivially achievable in like 5-10 minutes,
+but the game adds enough random nonsense upfront that it takes 30-40 minutes, thus decreasing the effectiveness of rerolling like this.
+
+Personally I think this is a pretty lame strategy so that's a no-go for me. Another strategy would be to prevent any kind of powerlevelling. In most MMOs that are grindy you have the concept of powerlevelling,
+which is getting a higher levelled character to help you kill higher level monsters so you get more XP, and thus level faster through the earlier levels of the game. Preventing this would work somewhat and it
+definitely should be there, but maybe it should be in a limited form. I think for most grindy games you want some form of compensation for players that already went through the process, and powerlevelling is one
+of those things that I think should exist in some capacity.
+
+The last thing possible would be to actually just make the game extremely grindy. This is the one that attracts me the most. If to reach the level where you're crafting the specific modifiers you need to simply
+grind a lot, this would make that achievement that much more impressive and it would limit access to content behind simple autism. This would be especially true if to grind crafts you need to engage in an activity
+other than actually killing monsters, like a mini-game of sorts.
+
+I have a few ideas for puzzle games that are procedurally generatable, and thus crafting and other non-combat oriented activities could all be this kind of mini-game that's generating these puzzles of increasing
+difficulty as the player levels up their abilities, and so really good players are actually really good at solving these puzzles. Think of the difference between a really good Tetris player and a normal one,
+stuff like that should be what the difference between an experienced crafter and a normal one looks like. This has a few obvious problems, which is that now each non-combat class is a small game entirely on its own,
+but I think that for an MMO that is otherwise entirely grinding this would be entirely reasonable and feasible, even for an indiedev like me to pull off.
+
+Either way, I think only when the game is actually extremely grindy can you pull of the specialization strategy I talked about above. If people can just create new characters and level them up to max effortlessly
+then the entire point is defeated.
+
+### Anime MMO
+
+To summarize, this is what the game described above looks like:
+
+There's a city at the center of the world where everyone spawns. Outside this city there are monsters and materials in all directions that get stronger or more useful the further away from the city.
+The game is extremely grindy and PvE oriented, although PvP may exist in some form. Players go out, kill monsters or find places to get materials from, come back to the city and repeat.
+Inside the city there are non-combat oriented classes that generally don't kill monsters to level up, a few examples:
+
+#### Blacksmith
+
+Blacksmiths use materials to craft and upgrade base physical equipment as well as new kinds equipments for different classes.
+Good blacksmiths can craft equipment with extremely high bases: the higher the base the more the equipment benefits from upgrades.
+They can also craft useful implicit modifiers to bases, which shouldn't be too different from PoE's implicit mods.
+
+They can also upgrade items, which would be the typical +N that things have that improves their stats.
+Combined with high bases these upgrades can turn items from average to extremely good.
+However, upgrades always carry with them the chance of breaking items, which a good blacksmith would also have a higher chance to prevent.
+
+A blacksmith that's earning a lot is either crafting extremely high bases/upgrades or doing modifiers/equipment that no other blacksmith can because they figured out recipes that others haven't.
+This adds two elements to blacksmithing, one of constant improvement (higher and higher bases and upgrades) and one of figuring out something completely new (new recipes).
+Potentially this could lead to further subclass specialization, but that depends a lot on what the blacksmith mini-game would be.
+
+#### Enchanter
+
+Enchanters use materials to craft and upgrade base magical equipment as well as adding modifiers to equipments generally.
+Enchanters generally focus on enchants around magic and elements, leaving non-magic and physical enchants to Blacksmiths.
+Good enchanters can craft extremely focused and specific modifiers and equipment.  Otherwise the results tend to be pretty random and unreliable, much like using currency to craft in PoE.
+Like blacksmiths, enchanters can also upgrade magical equipment and the system should work in a similar way to the blacksmith one.
+
+An enchanter that's earning a lot is upgrading or crafting specific equipments with specific modifiers on demand that no other enchanter can because they figured out recipes that others haven't.
+The different elements of enchanting would be similar to blacksmithing, either focusing on constant improvement or figuring out new magical items and modifiers.
+
+#### Chef
+
+#### Alchemist
+
+#### Herbalist
+
+#### Engineer
+
+#### Pardoner
+
+#### Oracle
+
+#### Wayfarer
+
+#### Cartographer
+
+#### Miner
+
+#### Squire
+
+(will write out most of these classes later!)
+
+Combat classes are already fairly explored in most games so ideas for them are never an issue.
+
+In any case, as players go through the world they find NPCs responsible for each class change. Unlike most games, those NPCs aren't readily available in the city. This adds a component of randomness
+to everyone's progress, and it also adds the possibility of a group of people purposefuly hiding the location of an NPC so that others don't get access to that class.
+
+The goal of the game could vary, it could be killing the big bad boss, it could be defending the city and/or outposts from monster invasions, or it could be simply seeing who gets the highest level.
+This really depends more on the specifics of the game that I haven't fleshed out yet. One thing I know for certain though is that it should be a server-wide goal. There should be very little room for
+players to go off and just do their own thing and play the game solo. It should be possible, but the game should make it obvious at every point that the player would benefit massively from engaging
+with the rest of the server more often. It's an MMO, after all.
+
+One way of doing this that would be very simple would be lifting FlyFF's system, where to get max XP you need a full party of separated couples (could be more). This way solo players are forced to at
+least interact with one person to grind better.
+
+The game also has permadeath. This adds an extra component to the grind and it also adds an extra component of difficulty for non-combat oriented classes. Those individuals will occasionally have to go
+out into the world, and since they aren't combat focused, that always poses as a threat to their entire character.
+
+The servers also reset every N-months, much like PoE. This is probably the most contentious thing but I think it makes perfect sense with a largely procedurally generated world. Monster, NPC, dungeon, material
+locations would all be randomized in these resets, making each playthrough of the game for the entire server somewhat fresh and new. Like in PoE, each reset would introduce a new league, which would add
+to the game in some way from a PvE perspective, but also add new classes, recipes, materials, etc.
+
+So, a mostly procedurally generated permadeath grindy anime MMO with tons of classes. While making an MMO is hard, this would cut out on content creation a lot. It seems that these days most MMOs or MMO-adjacent
+games focus way too much on stuff that doesn't matter (quests, stories, etc), and this bloats the development of these games. I think indiedevs eventually could make fun MMOs by cutting all of that out and just
+focusing on what people actually care about in these games, which is either mindlessly grinding or socializing.
 
 <br>
 
