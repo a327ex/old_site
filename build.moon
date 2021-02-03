@@ -109,6 +109,11 @@ get_blog = ->
     file_title = file\sub(1, file\find'%.'-1)
     table.insert files, {md_title: file_title, :body}
   content = ''
+  table.sort files, ((a, b) ->
+    _, _, date_a = a.body\find 'date: ([^\n]*)'
+    _, _, date_b = b.body\find 'date: ([^\n]*)'
+    return date_a < date_b
+  )
   for i = #files, 1, -1
     _, _, title = files[i].body\find 'title: ([^\n]*)'
     _, _, date = files[i].body\find 'date: ([^\n]*)'
