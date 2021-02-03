@@ -126,10 +126,10 @@ have to know the rules and act accordingly. In general, even if the content of y
 getting into huge arguments all the time, etc, you likely won't get banned from any of these huge social media sites like Twitter, YouTube, reddit, and so on. Just follow each site's rules!
 
 This gets into another argument that I'll probably write about in the future, but in general you want to look at all these places as having power over you, and ideally you'd want that to not be 
-the case, but because they're huge platform it's basically impossible for that to be so. So you don't want to fight them head on, you want to treat them as one would treat the politics of a foreign
-country they're spending a 2 weeks vacation on.
+the case, but because they're huge platforms it's basically impossible for that to be so. So you don't want to fight them head on, you want to treat them as one would treat the politics of a foreign
+country you're spending a 2 weeks vacation on.
 
-Do you care about the fact that you don't have a say on their political discussions? No. Will you follow all their local laws so you don't get arrested? Yes! You should have that same mentality
+Do you care about the fact that you don't have a say in their political discussions? No. Will you follow all their local laws so you don't get arrested? Yes! You should have that same mentality
 towards all these sites. Follow their rules and you'll more likely than not be fine.
 
 For the cases where you do have more power and you can make a choice, like with publishers, influencers, etc, then it's obvious that you should choose the choice that empowers you over them.

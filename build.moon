@@ -151,7 +151,7 @@ get_social_links = ->
 get_social = ->
   return "
     <div align='center'><br>
-    If you'd like to follow my progress, I send updates via email every time a new game is released:
+    Subscribe to get notified whenever a new game is released:
     <p>#{get_email!}</p>
 
     You can also follow me on:
@@ -160,6 +160,14 @@ get_social = ->
     <a href='https://www.youtube.com/channel/UCFOaLI21ThFPQxJJ5lFF4SQ' target='_blank'>youtube</a> or <a href='https://hydancer.tumblr.com' target='_blank'>tumblr</a>
     </div>
   "
+
+trim_title = (title) ->
+  if #title >= 38 then
+    trimmed_title = title\sub(1, 38)
+    last_space_index = string.reverse(trimmed_title)\find("%s")+1
+    return trimmed_title\sub(1, -last_space_index) .. "..."
+  else
+    return title
 
 get_next_prev = (i, files) ->
   if #files == 1
@@ -174,7 +182,7 @@ get_next_prev = (i, files) ->
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
-            <p>< #{files[i-1].title}</p>
+            <p>< #{trim_title files[i-1].title}</p>
           </a>
         </div>
         <div class='post-post-container'>
@@ -193,7 +201,7 @@ get_next_prev = (i, files) ->
         </div>
         <div class='post-post-container'>
           <a href='#{next_title}'>
-            <p>#{files[i+1].title} ></p>
+            <p>#{trim_title files[i+1].title} ></p>
           </a>
         </div>
       </div>
@@ -209,12 +217,12 @@ get_next_prev = (i, files) ->
       <div class='next-prev-post'>
         <div class='post-post-container'>
           <a href='#{prev_title}'>
-            <p>< #{files[i-1].title}</p>
+            <p>< #{trim_title files[i-1].title}</p>
           </a>
         </div>
         <div class='post-post-container'>
           <a href='#{next_title}'>
-            <p>#{files[i+1].title} ></p>
+            <p>#{trim_title files[i+1].title} ></p>
           </a>
         </div>
       </div>
