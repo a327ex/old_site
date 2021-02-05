@@ -3,12 +3,12 @@ get_head = (title, style) ->
     return [[
       <meta charset='uft-8'>
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-      <title>#{title}</title>
-      <meta property='og:title' content="#{title}">
+      <title>]] .. title .. [[</title>
+      <meta property='og:title' content="]] .. title .. [[">
       <meta property='og:image' content='https://a327ex.github.io/assets/shun.png'>
       <meta property='og:site_name' content="adn's web page">
       <meta name='twitter:card' content='summary'>
-      <meta name='twitter:title' content="#{title}">
+      <meta name='twitter:title' content="]] .. title .. [[">
       <meta name='twitter:image' content='https://a327ex.github.io/assets/shun.png'>
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
@@ -38,11 +38,11 @@ get_head = (title, style) ->
       <meta charset='uft-8'>
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
       <title>#{title}</title>
-      <meta property='og:title' content="#{title}">
+      <meta property='og:title' content="]] .. title .. [[">
       <meta property='og:image' content='https://a327ex.github.io/assets/shun.png'>
       <meta property='og:site_name' content="adn's web page">
       <meta name='twitter:card' content='summary'>
-      <meta name='twitter:title' content="#{title}">
+      <meta name='twitter:title' content="]] .. title .. [[">
       <meta name='twitter:image' content='https://a327ex.github.io/assets/shun.png'>
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src='https://www.googletagmanager.com/gtag/js?id=G-09V5DY115J'></script>
