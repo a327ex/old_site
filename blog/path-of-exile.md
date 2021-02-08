@@ -79,15 +79,22 @@ Because of how the game's action, speed and stat checks are structured there's n
 
 There are several problems with this, but I'm also not going to dwell on them. The question is how to do things differently so that this isn't the case.
 
-### Stat checking
+### Action
 
 The obvious solution here is to either make the game a more proper action game, or to make it a more proper stat check game.
 
 The action game would look like a game where you can actually dodge things.
 If an enemy shoots a projectile you can see the projectile and get out of the way. If an enemy does a melee attack you can see the enemy winding up and either defend or get out of the way.
 This would turn the game into something else that isn't an ARPG because it would make the game way slower and you wouldn't be able to play it mindlessly.
+
 There isn't necessarily a problem with the game being slower, and this is something PoE devs seem to actively want. But there's definitely something to being able to play the game without thinking,
 and making it too action oriented would take that away.
+
+There are a few games that manage to strike this balance in a way better way than PoE, in my opinion. For instance, Risk of Rain 2. RoR2 is a game that manages to be a fairly heavy action oriented
+game but where your stats also matter a fair bit. The only difference is that the level of customization offered in RoR2 is way lower than in PoE, and thus the developer has more control over how
+the game feels, which allows for more control over the "are you failing the stat check" question and its failure mode instantly killing you or not.
+
+### Stat checking
 
 The stat check game would look like a game where dodging literally doesn't matter.
 Combat happens by enemies locking onto you and you locking onto them, and then either melee or ranged attacks happen and they connect or not depending solely on stats.
