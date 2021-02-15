@@ -1,8 +1,37 @@
 <!--
 title: Game Ideas
 date: 2021-01-15
-update: 2021-02-03
+update: 2021-02-15
 -->
+
+## SNAKERX
+
+A game about controlling a conga line of characters. 
+
+### Gameplay Rules
+
+The game is inspired by [Nimble Quest](https://store.steampowered.com/app/259780/Nimble_Quest/).
+
+* You have a conga line of characters following the leader
+* You gain new characters by buying them as you go through various arenas
+* Hitting enemies or walls deals damage to all characters and makes you turn in the opposite direction
+* Characters that die simply disappear from the conga line
+* Enemies also behave like the player, just moving like a snake and with their own conga lines
+* Characters have class and race synergies like in Underlords
+* Characters have different attacks, some may attack in an area, others with projectiles, others might heal or buff
+* Win condition is just going through arenas and getting as deep as possible
+
+### Metagameplay
+
+A roguelite Hades-like where you go from arena to arena only being able to choose the next based on its reward.
+Arena rewards range from money, to passives, to new characters. As you go through the arenas enemies get harder,
+more numerous, and deal more damage.
+
+### Characters
+
+### Types
+
+<br>
 
 ## Anime PoE MMO
 
