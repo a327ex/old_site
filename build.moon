@@ -293,6 +293,7 @@ style = [[
     padding-right: 0.2em;
   }
 ]]
+[[
 files = {}
 for log in io.popen("dir devlog /b")\lines!
   body, title = convert_markdown "devlog/#{log}"
@@ -302,3 +303,4 @@ for i = #files, 1, -1
   footer = get_next_prev i, files
   footer ..= "<br><br>"
   build_page "docs/devlog/#{log.title}.html", log.title, style, nil, nil, log.body, footer
+]]

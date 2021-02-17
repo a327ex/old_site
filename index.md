@@ -79,7 +79,3 @@ This is fairly challenging and it helps keep me focused.
 
 <br>
 <br>
-
-## devlog
-
-{{devlog}}
