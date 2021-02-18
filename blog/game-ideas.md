@@ -14,10 +14,11 @@ The game is inspired by [Nimble Quest](https://store.steampowered.com/app/259780
 
 * You have a conga line of characters following the leader
 * You gain new characters by buying them as you go through various arenas
-* Hitting enemies or walls deals damage to all characters and makes you turn in the opposite direction
+* Hitting enemies deals damage to all characters
+* Hitting walls makes you turn in the opposite direction
 * Characters that die simply disappear from the conga line
 * Enemies also behave like the player, just moving like a snake and with their own conga lines
-* Characters have class and race synergies like in Underlords
+* Characters have class synergies like in Underlords
 * Characters have different attacks, some may attack in an area, others with projectiles, others might heal or buff
 * Win condition is just going through arenas and getting as deep as possible
 
@@ -29,7 +30,31 @@ more numerous, and deal more damage.
 
 ### Characters
 
-### Types
+Vagrant: shoots an ethereal projectile at any nearby enemy that deals physical and magical damage, medium range
+Scout: throws a knife at any nearby enemy that deals physical damage and chains, small range
+Cleric: heals every unit when any one drops below 50% HP
+Swordsman: deals physical damage in an area around the unit, small range
+Archer: shoots an arrow at any nearby enemy in front of the unit, long range
+Wizard: shoots a projectile at any nearby enemy and deals AoE magical damage on contact, small range
+
+### Synergies
+
+* Ranger: yellow, buff attack speed
+* Warrior: orange, buff attack damage
+* Healer: green, buff healing effectiveness
+* Mage: blue, debuff enemy magic resistance
+* Cycler: purple, buff cycle speed
+
+### Stats
+
+All units have the following stats:
+
+* HP
+* Damage
+* Attack speed
+* Armor
+* Magic resistance
+* Cycle speed
 
 <br>
 
