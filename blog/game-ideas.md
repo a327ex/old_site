@@ -30,12 +30,12 @@ more numerous, and deal more damage.
 
 ### Characters
 
-Vagrant: shoots an ethereal projectile at any nearby enemy that deals physical and magical damage, medium range
-Scout: throws a knife at any nearby enemy that deals physical damage and chains, small range
-Cleric: heals every unit when any one drops below 50% HP
-Swordsman: deals physical damage in an area around the unit, small range
-Archer: shoots an arrow at any nearby enemy in front of the unit, long range
-Wizard: shoots a projectile at any nearby enemy and deals AoE magical damage on contact, small range
+* Vagrant: shoots an ethereal projectile at any nearby enemy that deals physical and magical damage, medium range
+* Scout: throws a knife at any nearby enemy that deals physical damage and chains, small range
+* Cleric: heals every unit when any one drops below 50% HP
+* Swordsman: deals physical damage in an area around the unit, small range
+* Archer: shoots an arrow at any nearby enemy in front of the unit, long range
+* Wizard: shoots a projectile at any nearby enemy and deals AoE magical damage on contact, small range
 
 ### Synergies
 
