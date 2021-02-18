@@ -4,7 +4,7 @@ date: 2021-01-15
 update: 2021-02-15
 -->
 
-## SNAKERX
+## SNAKRX
 
 A game about controlling a conga line of characters. 
 
@@ -30,31 +30,28 @@ more numerous, and deal more damage.
 
 ### Characters
 
-* Vagrant: shoots an ethereal projectile at any nearby enemy that deals physical and magical damage, medium range
-* Scout: throws a knife at any nearby enemy that deals physical damage and chains, small range
+* Vagrant: shoots a projectile at any nearby enemy, medium range
+* Scout: throws a knife at any nearby enemy that chains, small range
 * Cleric: heals every unit when any one drops below 50% HP
-* Swordsman: deals physical damage in an area around the unit, small range
+* Swordsman: deals damage in an area around the unit, small range
 * Archer: shoots an arrow at any nearby enemy in front of the unit, long range
-* Wizard: shoots a projectile at any nearby enemy and deals AoE magical damage on contact, small range
+* Wizard: shoots a projectile at any nearby enemy and deals AoE damage on contact, small range
 
 ### Synergies
 
 * Ranger: yellow, buff attack speed
 * Warrior: orange, buff attack damage
 * Healer: green, buff healing effectiveness
-* Mage: blue, debuff enemy magic resistance
+* Mage: blue, debuff enemy defense
 * Cycler: purple, buff cycle speed
 
 ### Stats
 
-All units have the following stats:
-
 * HP
 * Damage
-* Attack speed
-* Armor
-* Magic resistance
-* Cycle speed
+* Attack speed: stacks additively, starts at 1 and capped at minimum 0.125s or +300%
+* Defense: if defense >= 0 then dmg_m = 100/(100+defense) else dmg_m = 2-100/(100-defense)
+* Cycle speed: stacks additively, starts at 2 and capped at minimum 0.5s or +300%
 
 <br>
 
