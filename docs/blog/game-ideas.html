@@ -26,50 +26,6 @@ date: 2021-01-15
 update: 2021-02-15
 -->
 
-<h2 id="snakrx">SNAKRX</h2>
-<p>A game about controlling a conga line of characters.</p>
-<h3 id="gameplay-rules">Gameplay Rules</h3>
-<p>The game is inspired by <a href="https://store.steampowered.com/app/259780/Nimble_Quest/" target="_blank">Nimble Quest</a>.</p>
-<ul>
-<li>You have a conga line of characters following the leader</li>
-<li>You gain new characters by buying them as you go through various arenas</li>
-<li>Hitting enemies deals damage to all characters</li>
-<li>Hitting walls makes you turn in the opposite direction</li>
-<li>Characters that die simply disappear from the conga line</li>
-<li>Enemies also behave like the player, just moving like a snake and with their own conga lines</li>
-<li>Characters have class synergies like in Underlords</li>
-<li>Characters have different attacks, some may attack in an area, others with projectiles, others might heal or buff</li>
-<li>Win condition is just going through arenas and getting as deep as possible</li>
-</ul>
-<h3 id="metagameplay">Metagameplay</h3>
-<p>A roguelite Hades-like where you go from arena to arena only being able to choose the next based on its reward. Arena rewards range from money, to passives, to new characters. As you go through the arenas enemies get harder, more numerous, and deal more damage.</p>
-<h3 id="characters">Characters</h3>
-<ul>
-<li>Vagrant: shoots a projectile at any nearby enemy, medium range</li>
-<li>Scout: throws a knife at any nearby enemy that chains, small range</li>
-<li>Cleric: heals every unit when any one drops below 50% HP</li>
-<li>Swordsman: deals damage in an area around the unit, small range</li>
-<li>Archer: shoots an arrow at any nearby enemy in front of the unit, long range</li>
-<li>Wizard: shoots a projectile at any nearby enemy and deals AoE damage on contact, small range</li>
-</ul>
-<h3 id="synergies">Synergies</h3>
-<ul>
-<li>Ranger: yellow, buff attack speed</li>
-<li>Warrior: orange, buff attack damage</li>
-<li>Healer: green, buff healing effectiveness</li>
-<li>Mage: blue, debuff enemy defense</li>
-<li>Cycler: purple, buff cycle speed</li>
-</ul>
-<h3 id="stats">Stats</h3>
-<ul>
-<li>HP</li>
-<li>Damage</li>
-<li>Attack speed: stacks additively, starts at 1 and capped at minimum 0.125s or +300%</li>
-<li>Defense: if defense &gt;= 0 then dmg_m = 100/(100+defense) else dmg_m = 2-100/(100-defense)</li>
-<li>Cycle speed: stacks additively, starts at 2 and capped at minimum 0.5s or +300%</li>
-</ul>
-<br>
-
 <h2 id="anime-poe-mmo">Anime PoE MMO</h2>
 <p>A game very similar to Path of Exile but anime styled, with the visual ideal being something like <a href="https://store.steampowered.com/app/372000/Tree_of_Savior_English_Ver/" target="_blank">Tree of Savior</a>.</p>
 <h3 id="cityhub">City/hub</h3>
@@ -141,7 +97,7 @@ update: 2021-02-15
 
 <h2 id="ngu-number-go-up">NGU: Number Go Up!</h2>
 <p>A game about numbers going up.</p>
-<h3 id="gameplay-rules-1">Gameplay Rules</h3>
+<h3 id="gameplay-rules">Gameplay Rules</h3>
 <p>The game is inspired by <a href="https://mrredshark77.github.io/incremental-merge/" target="_blank">Incremental Merge</a>, so things will be described with that in mind.</p>
 <ul>
 <li>You have a pool of numbers, like cards in a card game</li>
@@ -151,7 +107,7 @@ update: 2021-02-15
 <li>Enemies are also just numbers and deal damage to your main number over time (not turn based)</li>
 <li>Win condition is generally just killing all enemies in a given room without having your HP drop below 0</li>
 </ul>
-<h3 id="metagameplay-1">Metagameplay</h3>
+<h3 id="metagameplay">Metagameplay</h3>
 <p>A roguelite Slay the Spire-like where you go from node to node fighting numbers with your own numbers. Unlike StS, your pool of numbers is constant throughout the game, meaning you don't renew your numbers every fight. As you go through the map and merge more and more numbers you get more powerful. While in the first fight you might be merging 1+1, in further fights you might be merging 60+60 by default and so on.</p>
 <p>There are rooms where you can increase your number pool without having to wait or merge them in a fight. There are rooms where you can also find artifacts, items, more HP, etc. In general special items and artifacts might give you various bonuses, like getting more numbers per merge, increasing the base number of your generated numbers, effects when you deal damage to enemies, when specific types of numbers are merged (like primes), etc.</p>
 <h3 id="gameplay-elements">Gameplay Elements</h3>
@@ -181,7 +137,7 @@ update: 2021-02-15
 
 <h2 id="jugglrx">JUGGLRX</h2>
 <p>A game about juggling balls.</p>
-<h3 id="gameplay-rules-2">Gameplay Rules</h3>
+<h3 id="gameplay-rules-1">Gameplay Rules</h3>
 <ul>
 <li>You have 1 or more paddles, and you can switch between them with the 1-4 keys</li>
 <li>If a ball falls you lose 1 HP for the currently selected paddle</li>
@@ -195,7 +151,7 @@ update: 2021-02-15
 <li>Clearing the map of enemy structures</li>
 </ul></li>
 </ul>
-<h3 id="metagameplay-2">Metagameplay</h3>
+<h3 id="metagameplay-1">Metagameplay</h3>
 <p>Two possibilities:</p>
 <p>Roguelite Slay the Spire-like map, with passives and paddles being found in each node that increasingly make juggling more balls easier. Examples of those can be found in the modifiers section. This is a pretty standard setup, the only way it works though if it there are enough gameplay elements and modifiers to be played around with, especially if there are multiple types of builds available that players can go for. That's still questionable so I don't know if this would work yet.</p>
 <p>One Finger Death Punch-like static map, with passives and paddles being found as you explore the map. The further out you go the bigger the challenge, with different types of nodes focusing on different gameplay elements and on different skills the player can improve over time. This is the safer option that's less replayable but more controllable and I should go for it in case I can't think of enough modifiers or paddles to have enough variation for a roguelite.</p>

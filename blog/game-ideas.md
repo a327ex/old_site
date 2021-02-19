@@ -4,57 +4,6 @@ date: 2021-01-15
 update: 2021-02-15
 -->
 
-## SNAKRX
-
-A game about controlling a conga line of characters. 
-
-### Gameplay Rules
-
-The game is inspired by [Nimble Quest](https://store.steampowered.com/app/259780/Nimble_Quest/).
-
-* You have a conga line of characters following the leader
-* You gain new characters by buying them as you go through various arenas
-* Hitting enemies deals damage to all characters
-* Hitting walls makes you turn in the opposite direction
-* Characters that die simply disappear from the conga line
-* Enemies also behave like the player, just moving like a snake and with their own conga lines
-* Characters have class synergies like in Underlords
-* Characters have different attacks, some may attack in an area, others with projectiles, others might heal or buff
-* Win condition is just going through arenas and getting as deep as possible
-
-### Metagameplay
-
-A roguelite Hades-like where you go from arena to arena only being able to choose the next based on its reward.
-Arena rewards range from money, to passives, to new characters. As you go through the arenas enemies get harder,
-more numerous, and deal more damage.
-
-### Characters
-
-* Vagrant: shoots a projectile at any nearby enemy, medium range
-* Scout: throws a knife at any nearby enemy that chains, small range
-* Cleric: heals every unit when any one drops below 50% HP
-* Swordsman: deals damage in an area around the unit, small range
-* Archer: shoots an arrow at any nearby enemy in front of the unit, long range
-* Wizard: shoots a projectile at any nearby enemy and deals AoE damage on contact, small range
-
-### Synergies
-
-* Ranger: yellow, buff attack speed
-* Warrior: orange, buff attack damage
-* Healer: green, buff healing effectiveness
-* Mage: blue, debuff enemy defense
-* Cycler: purple, buff cycle speed
-
-### Stats
-
-* HP
-* Damage
-* Attack speed: stacks additively, starts at 1 and capped at minimum 0.125s or +300%
-* Defense: if defense >= 0 then dmg_m = 100/(100+defense) else dmg_m = 2-100/(100-defense)
-* Cycle speed: stacks additively, starts at 2 and capped at minimum 0.5s or +300%
-
-<br>
-
 ## Anime PoE MMO
 
 A game very similar to Path of Exile but anime styled, with the visual ideal being something like [Tree of Savior](https://store.steampowered.com/app/372000/Tree_of_Savior_English_Ver/).
